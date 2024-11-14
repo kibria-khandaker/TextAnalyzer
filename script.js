@@ -1,5 +1,14 @@
 document.getElementById("textInput").addEventListener("input", function() {
-    const text = this.value.trim();
+    updateCounts();
+});
+
+document.getElementById("clearButton").addEventListener("click", function() {
+    document.getElementById("textInput").value = "";  // Clear the textarea
+    updateCounts();  // Reset all counters
+});
+
+function updateCounts() {
+    const text = document.getElementById("textInput").value.trim();
 
     // Character count
     const charCount = text.length;
@@ -44,4 +53,4 @@ document.getElementById("textInput").addEventListener("input", function() {
     document.getElementById("readingTime").textContent = formattedReadingTime;
     document.getElementById("speakingTime").textContent = formattedSpeakingTime;
     document.getElementById("gradeLevel").textContent = gradeReadingLevel;
-});
+}

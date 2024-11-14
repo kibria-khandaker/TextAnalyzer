@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Analyzer</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="counter-container">
-        <h2>Text Analyzer</h2>
-        <textarea id="textInput" placeholder="Type or paste your text here..." rows="8"></textarea>
-        <div class="counts_item_3" >
-            <p>Estimated Reading Time : <span id="readingTime"  title="Reading time (assuming 275 words per minute)" > 0 </span> min </p>
-            <p>Estimated Speaking Time : <span id="speakingTime"  title="Speaking time (assuming 180 words per minute)"> 0 </span> min </p>
-            <p>Reading Quality : <span id="gradeLevel" title="Flesch-Kincaid Grade Level" > 0 </span></p>
-        </div>
-        <div class="counts">
-            <div class="counts_item_1" >
-                <p>Total Words: <span id="wordCount">0</span></p>
-                <p>Total Characters: <span id="charCount">0</span></p>
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+    <div class="w-full max-w-screen-lg bg-white p-6 rounded-lg shadow-lg text-center">
+        <h2 class="text-2xl font-semibold text-indigo-400 mb-4">Text Analyzer</h2>
+        
+        <textarea id="textInput" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" placeholder="Type or paste your text here..." rows="8"></textarea>
+        
+        <!-- Clear Button -->
+        <button id="clearButton" class="mt-4 px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-300">Clear</button>
+        
+        <div class="m-0 p-0 text-gray-500">
+            <div class="flex justify-evenly -mt-1 pb-1 text-sm border-b">
+                <p>Estimated Reading Time: <span id="readingTime" title="Reading time (assuming 275 words per minute)" class="font-semibold text-blue-600">0</span></p>
+                <p>Estimated Speaking Time: <span id="speakingTime" title="Speaking time (assuming 180 words per minute)" class="font-semibold text-blue-600">0</span></p>
+                <p>Content Quality: <span id="gradeLevel" title="Flesch-Kincaid Grade Level" class="font-semibold text-blue-600">0</span> Grade</p>
             </div>
-            <div class="counts_item_2" >
-                <p>Total Sentences: <span id="sentenceCount">0</span></p>
-                <p>Total Paragraphs: <span id="paragraphCount">0</span></p>
+            <div class="flex justify-around mt-4">
+                <div class="text-left">
+                    <p>Total Words: <span id="wordCount" class="font-semibold text-blue-600">0</span></p>
+                    <p>Total Characters: <span id="charCount" class="font-semibold text-blue-600">0</span></p>
+                </div>
+                <div class="">
+                    <p>Total Sentences: <span id="sentenceCount" class="font-semibold text-blue-600">0</span></p>
+                    <p>Total Paragraphs: <span id="paragraphCount" class="font-semibold text-blue-600">0</span></p>
+                </div>
             </div>
         </div>
     </div>
