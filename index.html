@@ -7,33 +7,42 @@
     <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 flex justify-center items-center h-screen">
-    <div class="w-full max-w-screen-lg bg-white p-6 rounded-lg shadow-lg text-center">
-        <h2 class="text-2xl font-semibold text-indigo-400 mb-4">Text Analyzer</h2>
-        
-        <textarea id="textInput" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" placeholder="Type or paste your text here..." rows="8"></textarea>
-        
-        <!-- Clear Button -->
-        <button id="clearButton" class="mt-4 px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-300">Clear</button>
-        
-        <div class="m-0 p-0 text-gray-500">
-            <div class="flex justify-evenly -mt-1 pb-1 text-sm border-b">
-                <p>Estimated Reading Time: <span id="readingTime" title="Reading time (assuming 275 words per minute)" class="font-semibold text-blue-600">0</span></p>
-                <p>Estimated Speaking Time: <span id="speakingTime" title="Speaking time (assuming 180 words per minute)" class="font-semibold text-blue-600">0</span></p>
-                <p>Content Quality: <span id="gradeLevel" title="Flesch-Kincaid Grade Level" class="font-semibold text-blue-600">0</span> Grade</p>
-            </div>
-            <div class="flex justify-around mt-4">
-                <div class="text-left">
-                    <p>Total Words: <span id="wordCount" class="font-semibold text-blue-600">0</span></p>
-                    <p>Total Characters: <span id="charCount" class="font-semibold text-blue-600">0</span></p>
+<body class="bg-gray-100 flex flex-col justify-center items-center w-full max-w-screen-lg mx-auto md:h-screen p-6">
+    <header class="w-full">
+        <div class="flex flex-col md:flex-row justify-between gap-4 mb-3">
+            <h1 class="text-4xl text-center md:Ltext-left font-semibold text-blue-400">Text Analyzer</h1>
+            <!-- Copy Button hidden -->
+                <div class="md:text-right text-center">
+                    <button id="copyButton" class=" hidden px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300" onclick="copyText()">Copy Text</button>
+                    <!-- Clear Button -->
+                    <button id="clearButton" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-300">Clear</button>
                 </div>
-                <div class="">
-                    <p>Total Sentences: <span id="sentenceCount" class="font-semibold text-blue-600">0</span></p>
-                    <p>Total Paragraphs: <span id="paragraphCount" class="font-semibold text-blue-600">0</span></p>
-                </div>
-            </div>
         </div>
-    </div>
+    </header>
+    <section class="w-full">      
+            <textarea id="textInput" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" placeholder="Type or paste your text here..." rows="8"></textarea>
+            
+            <div class="m-0 p-0 text-gray-500">
+                <div class="flex  flex-col md:flex-row justify-evenly  -mt-1 pb-1 text-sm border-b">
+                    <p>Estimated Reading Time: <span id="readingTime" title="Reading time (assuming 275 words per minute)" class="font-semibold text-red-600">0</span></p>
+                    <p>Estimated Speaking Time: <span id="speakingTime" title="Speaking time (assuming 180 words per minute)" class="font-semibold text-red-600">0</span></p>
+                    <p>Content Quality: <span id="gradeLevel" title="Flesch-Kincaid Grade Level" class="font-semibold text-red-600">0</span> Grade</p>
+                </div>
+                <div class="flex  flex-col md:flex-row justify-around my-4 text-lg">
+                    <div class="text-left">
+                        <p>Total Words: <span id="wordCount" class="font-bold text-blue-600">0</span></p>
+                        <p>Total Characters: <span id="charCount" class="font-bold text-blue-600">0</span></p>
+                    </div>
+                    <div class="">
+                        <p>Total Sentences: <span id="sentenceCount" class="font-bold text-blue-600">0</span></p>
+                        <p>Total Paragraphs: <span id="paragraphCount" class="font-bold text-blue-600">0</span></p>
+                    </div>
+                </div>
+            </div>
+    </section>
     <script src="script.js"></script>
+    <footer class="w-full py-3 md:py-5 text-center border-t">    
+        <p class="text-sm">Copyright 2024. All Rights Reserved <a class="text-blue-500" href="https://netkib.com/">NetKib</a> & <a class="text-blue-500" href="https://kibria.net/">Kibria</a>.</p>
+      </footer>
 </body>
 </html>
