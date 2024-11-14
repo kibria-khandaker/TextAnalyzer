@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="counter-container">
+        <h2>Text Analyzer</h2>
+        <textarea id="textInput" placeholder="Type or paste your text here..." rows="8"></textarea>
+        <div class="counts_item_3" >
+            <p>Estimated Reading Time : <span id="readingTime"  title="Reading time (assuming 275 words per minute)" > 0 </span> min </p>
+            <p>Estimated Speaking Time : <span id="speakingTime"  title="Speaking time (assuming 180 words per minute)"> 0 </span> min </p>
+            <p>Reading Quality : <span id="gradeLevel" title="Flesch-Kincaid Grade Level" > 0 </span></p>
+        </div>
+        <div class="counts">
+            <div class="counts_item_1" >
+                <p>Total Words: <span id="wordCount">0</span></p>
+                <p>Total Characters: <span id="charCount">0</span></p>
+            </div>
+            <div class="counts_item_2" >
+                <p>Total Sentences: <span id="sentenceCount">0</span></p>
+                <p>Total Paragraphs: <span id="paragraphCount">0</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
